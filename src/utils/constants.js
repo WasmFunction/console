@@ -16,6 +16,9 @@
  * along with KubeSphere Console.  If not, see <https://www.gnu.org/licenses/>.
  */
 
+export const MIN_PORT = 30000
+export const MAX_PORT = 32767
+
 export const WORKLOAD_STATUS = [
   { text: 'RUNNING', value: 'running' },
   { text: 'UPDATING', value: 'updating' },

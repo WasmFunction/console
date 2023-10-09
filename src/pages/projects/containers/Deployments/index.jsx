@@ -180,6 +180,7 @@ export default class Deployments extends React.Component {
         sorter: true,
         sortOrder: getSortOrder('name'),
         search: true,
+        width: '25%',
         render: (name, record) => (
           <Avatar
             icon={ICON_TYPES[module]}
@@ -191,24 +192,29 @@ export default class Deployments extends React.Component {
           />
         ),
       },
+      // {
+      //   title: t('STATUS'),
+      //   dataIndex: 'status',
+      //   filters: this.getStatus(),
+      //   filteredValue: getFilteredValue('status'),
+      //   isHideable: true,
+      //   search: true,
+      //   width: '22%',
+      //   render: (status, record) => (
+      //     <WorkloadStatus data={record} module={module} />
+      //   ),
+      // },
       {
-        title: t('STATUS'),
-        dataIndex: 'status',
-        filters: this.getStatus(),
-        filteredValue: getFilteredValue('status'),
+        title: t('IMAGE'),
+        dataIndex: 'podImage',
         isHideable: true,
-        search: true,
         width: '22%',
-        render: (status, record) => (
-          <WorkloadStatus data={record} module={module} />
-        ),
       },
       {
-        title: t('APP'),
-        dataIndex: 'app',
+        title: t('POD_PORT'),
+        dataIndex: 'podPort',
         isHideable: true,
-        search: true,
-        width: '22%',
+        width: '25%',
       },
       {
         title: t('UPDATE_TIME_TCAP'),
@@ -239,9 +245,8 @@ export default class Deployments extends React.Component {
       <ListPage {...this.props}>
         <Banner
           {...bannerProps}
-          title={t('WORKLOAD_PL')}
-          description={t('WORKLOAD_DESC')}
-          tabs={this.tabs}
+          title={t('NEW_WORKLOAD_PL')}
+          description={t('NEW_WORKLOAD_DESC')}
         />
         <Table
           {...tableProps}

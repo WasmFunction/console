@@ -42,7 +42,7 @@ module.exports = {
   DEPLOYMENT_SCAP: '部署',
   STATEFULSET_SCAP: '有状态副本集',
   DAEMONSET_SCAP: '守护进程集',
-  WORKSPACE_SCAP: '企业空间',
+  WORKSPACE_SCAP: '工作空间',
   CLUSTER_SCAP: '集群',
   PROJECT_SCAP: '项目',
   SERVICE_SCAP: '服务',

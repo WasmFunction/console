@@ -24,7 +24,7 @@ module.exports = {
   DEVELOP_APP_DESC: '您可以上传 Helm chart 或者使用 KubeSphere 提供的资源编排工具进行应用模板的开发。',
   DEVELOP_APP_TITLE: '如何开发应用模板？',
   HOW_PUBLISH_APP_TITLE: '如何发布应用到应用商店？',
-  HOW_PUBLISH_APP_DESC: '您可以将 Helm chart 上传为企业空间的应用模板，审核通过后，应用将会发布在应用商店中。',
+  HOW_PUBLISH_APP_DESC: '您可以将 Helm chart 上传为工作空间的应用模板，审核通过后，应用将会发布在应用商店中。',
   // List
   APP_STATUS_ACTIVE: '已发布',
   APP_STATUS_DRAFT: '未发布',

@@ -41,11 +41,11 @@ module.exports = {
   // List > Edit Information
   // List > View YAML
   // Assign Workspace
-  IPPOOL_ASSIGN_WORKSPACE_DESC: '为 IP 池分配一个企业空间。',
-  IPPOOL_ASSIGN_WORKSPACE_ALLOCATED_WARNING: 'IP 池已被使用，无法分配给另一个具体的企业空间。',
-  IPPOOL_ASSIGN_WORKSPACE_CHANGE_WARNING: 'IP 池已被使用且已指定具体的企业空间，无法更改企业空间。',
-  ASSIGN_WORKSPACE: '分配企业空间',
-  SELECT_WORKSPACE_DESC: '选择一个企业空间。',
+  IPPOOL_ASSIGN_WORKSPACE_DESC: '为 IP 池分配一个工作空间。',
+  IPPOOL_ASSIGN_WORKSPACE_ALLOCATED_WARNING: 'IP 池已被使用，无法分配给另一个具体的工作空间。',
+  IPPOOL_ASSIGN_WORKSPACE_CHANGE_WARNING: 'IP 池已被使用且已指定具体的工作空间，无法更改工作空间。',
+  ASSIGN_WORKSPACE: '分配工作空间',
+  SELECT_WORKSPACE_DESC: '选择一个工作空间。',
   // List > Delete
   POD_IP_POOL_LOW: '容器组 IP 池'
 };

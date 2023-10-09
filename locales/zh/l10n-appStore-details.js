@@ -30,7 +30,7 @@ module.exports = {
   CLUSTER_NAME_DESC: '名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 32 个字符。',
   FEDPROJECT_CANNOT_DEPLOY_APP_TIP: '无法在多集群项目中安装应用。',
   LATEST_VERSION_SCAP: '最新版本',
-  WORKSPACE_EMPTY_DESC: '请选择企业空间',
+  WORKSPACE_EMPTY_DESC: '请选择工作空间',
   VERSION_EMPTY_DESC: '请选择版本。',
   // Install > App Settings
   HELM_APP_SCHEMA_FORM_TIP: '您可以通过图形化表单或 YAML 文件对应用进行设置。图形化表单和 YAML 文件中的设置相互独立。',

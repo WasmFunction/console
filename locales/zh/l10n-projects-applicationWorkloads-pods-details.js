@@ -19,7 +19,9 @@ module.exports = {
   // Attributes
   QOS_CLASS: 'QoS 类别',
   NODE_NAME: '节点名称',
-  POD_IP_ADDRESS: '容器组 IP 地址',
+  POD_IP_ADDRESS: '云主机 IP 地址',
+  POD_PORT: '登录命令',
+  IMAGE: '镜像名称',
   // Run Records
   JOB_UNFINISHED: '未完成',
   // Resource Status

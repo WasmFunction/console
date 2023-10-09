@@ -25,7 +25,7 @@ module.exports = {
   // More > Assign Workspace
   // More > Delete
   // Workspaces
-  WORKSPACES: '企业空间',
+  WORKSPACES: '工作空间',
   MANAGER: '管理员',
-  IPPOOL_WORKSPACE_EMPTY_TIP: '未发现企业空间使用此 IP 池'
+  IPPOOL_WORKSPACE_EMPTY_TIP: '未发现工作空间使用此 IP 池'
 };

@@ -17,7 +17,9 @@
  */
 module.exports = {
   // Banner
+  NEW_APPLICATION_WORKLOAD_PL: '我的资源',
   APPLICATION_WORKLOAD_PL: '应用负载',
+  NEW_WORKLOAD_PL: '我的dev-container',
   WORKLOAD_PL: '工作负载',
   // List
   DEPLOYMENTS: '部署',
@@ -33,6 +35,7 @@ module.exports = {
   FINISHED: '已设置',
   NOT_SET: '未设置',
   CURRENT: '当前',
+  NEW_PROJECT: 'DevContainer项目',
   PROJECT: '项目',
   // List > Create > Pod Settings
   PREVIOUS: '上一步',

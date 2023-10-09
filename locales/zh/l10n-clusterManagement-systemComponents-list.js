@@ -27,7 +27,7 @@ module.exports = {
   OPENLDAP_DESC: '集中存储和管理用户的账户信息。',
   REDIS_DESC: '开源内存数据结构化存储组件，用作数据库、缓存和消息中介。',
   TOWER_DESC: '用于集群间通过代理方式创建网络连接。',
-  KS_CONTROLLER_MANAGER_DESC: '实现业务逻辑。例如，创建企业空间时创建对应的权限，创建服务策略时生成对应的 Istio 配置。',
+  KS_CONTROLLER_MANAGER_DESC: '实现业务逻辑。例如，创建工作空间时创建对应的权限，创建服务策略时生成对应的 Istio 配置。',
   // Kubernetes
   COREDNS_DESC: '为 Kubernetes 集群提供服务发现的功能',
   METRICS_SERVER_DESC: 'Kubernetes 的监控组件，用于从每个节点的 kubelet 采集指标信息。',

@@ -113,6 +113,7 @@ export default class Pods extends React.Component {
         sortOrder: getSortOrder('name'),
         search: true,
         render: this.renderAvatar,
+        width: '40%',
       },
       {
         title: t('STATUS'),
@@ -124,26 +125,41 @@ export default class Pods extends React.Component {
           <span>{t(podStatus.type.toUpperCase())}</span>
         ),
       },
+      /* 隐藏pod-结点项
       {
         title: t('NODE'),
         dataIndex: 'node',
         isHideable: true,
         width: '18%',
         render: this.renderNode,
-      },
+      },*/
       {
+        title: t('IMAGE'),
+        dataIndex: 'podImage',
+        isHideable: true,
+        width: '20%',
+      },
+      /*{
         title: t('POD_IP_ADDRESS'),
         dataIndex: 'podIp',
         isHideable: true,
         width: '15%',
-      },
+      },*/
+      // 添加
+      // {
+      //   title: t('POD_PORT'),
+      //   dataIndex: 'podPort',
+      //   isHideable: true,
+      //   width: '15%',
+      // },
+     /* 隐藏pods-应用项
       {
         title: t('APP'),
         dataIndex: 'app',
         isHideable: true,
         search: true,
         width: '15%',
-      },
+      },*/
       {
         title: t('UPDATE_TIME_TCAP'),
         dataIndex: 'startTime',
@@ -208,7 +224,6 @@ export default class Pods extends React.Component {
           itemActions={this.itemActions}
           columns={this.getColumns()}
           hideColumn={['status']}
-          onCreate={null}
         />
       </ListPage>
     )

@@ -2,7 +2,7 @@
 server:
   http:
     hostname: localhost
-    port: 88
+    port: 8000
     static:
       development:
         /public: server/public
@@ -364,17 +364,24 @@ client:
             authKey: "services",
           }
         - name: app-workloads
-          title: NEW_APPLICATION_WORKLOAD_PL
+          title: APPLICATION_WORKLOAD_PL
           icon: appcenter
           children:
-            - { name: applications, title: NEW_APP_PL, icon: application }
+            - { name: applications, title: APP_PL, icon: application }
+            - { name: services, title: SERVICE_PL }
             - name: workloads
-              title: NEW_WORKLOAD_PL
+              title: WORKLOAD_PL
               tabs:
                 - { name: deployments, title: DEPLOYMENT_PL }
                 - { name: statefulsets, title: STATEFULSET_PL }
                 - { name: daemonsets, title: DAEMONSET_PL }
-            - { name: pods, title: NEW_POD_PL }
+            - name: jobs
+              title: JOB_PL
+              tabs:
+                - { name: jobs, title: JOB_PL }
+                - { name: cronjobs, title: CRONJOB_PL }
+            - { name: ingresses, title: ROUTE_PL }
+            - { name: pods, title: POD_PL }
         - name: storage
           title: STORAGE
           icon: database

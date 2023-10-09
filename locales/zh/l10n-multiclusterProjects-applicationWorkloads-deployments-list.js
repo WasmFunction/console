@@ -17,6 +17,7 @@
  */
 module.exports = {
   // Banner
+  NEW_WORKLOAD_DESC: '提供自主创建和删除dev-container的方式，用户可当作将其当作云主机ssh远程登录',
   WORKLOAD_DESC: '工作负载（Workload）用于处理业务请求，可包含一个或多个容器组。日志、监控等系统功能也是由工作负载实现的。',
   // List
   DEPLOYMENT_EMPTY_DESC: '请创建一个部署。',

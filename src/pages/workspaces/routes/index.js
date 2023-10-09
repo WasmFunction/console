@@ -28,6 +28,7 @@ import FedProjects from '../containers/FedProjects'
 import DevOps from '../containers/DevOps'
 import Apps from '../containers/Apps'
 import Repos from '../containers/Repos'
+import Devcontainer from '../containers/DevContainer'
 
 import detail from './detail'
 import overviewRoutes from './overview'

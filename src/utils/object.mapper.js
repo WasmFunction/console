@@ -174,6 +174,8 @@ const NamespaceMapper = item => ({
 
 const WorkLoadMapper = item => ({
   ...getBaseInfo(item),
+  podImage: get(item, 'spec.template.spec.containers[0].image'),
+  podPort: get(item, 'spec.template.metadata.annotations["custom.annotation/port"]'),
   kind: get(item, 'kind'),
   updateTime: getWorkloadUpdateTime(item),
   labels: get(item, 'metadata.labels', {}),
@@ -405,6 +407,10 @@ const PodsMapper = item => ({
   node: get(item, 'spec.nodeName', ''),
   nodeIp: get(item, 'status.hostIP', 'none'),
   podIp: get(item, 'status.podIP'),
+  // 新增
+  podImage: get(item, 'spec.containers[0].image'),
+ // podPort: get(item, 'metadata.annotations["custom.annotation/port"]'),
+  uid: get(item, 'metadata.namespace.uid'),
   networksStatus: safeParseJSON(
     get(item, 'metadata.annotations["k8s.v1.cni.cncf.io/networks-status"]', ''),
     []

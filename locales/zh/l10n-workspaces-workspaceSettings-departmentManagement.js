@@ -18,7 +18,7 @@
 module.exports = {
   // Banner
   DEPARTMENT_PL: '部门',
-  DEPARTMENT_DESC: '企业空间中的部门是用来管理权限的逻辑单元。您可以在部门中设置企业空间角色、多个项目角色以及多个 DevOps 项目角色，还可以将用户分配到部门中以批量管理用户权限。',
+  DEPARTMENT_DESC: '工作空间中的部门是用来管理权限的逻辑单元。您可以在部门中设置工作空间角色、多个项目角色以及多个 DevOps 项目角色，还可以将用户分配到部门中以批量管理用户权限。',
   // List
   // List > Not Assigned
   NOT_ASSIGNED_TCAP: '未分配',
@@ -39,8 +39,8 @@ module.exports = {
   DEVOPS_VALUE: 'DevOps 项目：{value}',
   DEVOPS_PROJECT_ROLES_VALUE: 'DevOps 项目角色：{value}',
   // List > Set Departments > Workspace Role
-  WORKSPACE_ROLE: '企业空间角色',
-  GROUP_WORKSPACE_ROLE_DESC: '企业空间角色将授予部门中的所有用户。',
+  WORKSPACE_ROLE: '工作空间角色',
+  GROUP_WORKSPACE_ROLE_DESC: '工作空间角色将授予部门中的所有用户。',
   MEMBER_CLUSTER_UPGRADE_TIP: '低于 {version} 版本的成员集群不支持此功能, 请将成员集群升级到 {version} 或以上版本。',
   // List > Set Departments > Project Role
   PROJECT_ROLE: '项目角色',

@@ -17,12 +17,13 @@
  */
 module.exports = {
   // Banner
+  NEW_POD_PL: '详细信息',
   POD_PL: '容器组',
   // List
   NODE_IP: '{node}（{ip}）',
   WAITING: '等待中',
   // List > View YAML
   // List > Delete
-  POD_LOW: '容器组',
+  POD_LOW: '云主机',
   PENDING: '等待中'
 };

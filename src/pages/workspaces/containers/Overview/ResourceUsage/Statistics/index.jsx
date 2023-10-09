@@ -86,7 +86,7 @@ export default class ResourceStatistics extends React.Component {
                 icon={ICON_TYPES['projects']}
                 desc={
                   metrics.workspace_namespace_count === '1'
-                    ? t('PROJECT')
+                    ? t('NEW_PROJECT')
                     : t('PROJECT_PL')
                 }
                 title={metrics.workspace_namespace_count}

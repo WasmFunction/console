@@ -25,7 +25,7 @@ module.exports = {
   DEFAULT_CONTAINER_QUOTAS_DESC: '默认容器配额用于指定项目中创建的容器的默认 CPU 预留、CPU 上限、内存预留和内存上限。',
   APPLICATION_RESOURCE_COUNT: '应用资源',
   SELECT_RESOURCE_TIP: '请选择资源或输入资源名称',
-  NUMBER_OF_PODS: '容器组数量',
+  NUMBER_OF_PODS: 'dev-container数量',
   NUMBER_OF_DEPLOYMENTS: '部署数量',
   NUMBER_OF_STATEFULSETS: '有状态副本集数量',
   NUMBER_OF_DAEMONSETS: '守护进程集数量',

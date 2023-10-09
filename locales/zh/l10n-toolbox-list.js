@@ -28,7 +28,7 @@ module.exports = {
   RESOURCE_EVENT_SEARCH_DESC: '针对集群资源的多维度资源事件查询工具。',
   AUDIT_LOG_DESC: '针对集群资源的多维度审计日志查询工具。',
   RESOURCE_CONSUMPTION_STATISTICS: '资源消费统计',
-  METERING_AND_BILLING_DESC: '查看集群和企业空间的资源消费情况。',
+  METERING_AND_BILLING_DESC: '查看集群和工作空间的资源消费情况。',
   CONTAINER_LOG_SEARCH: '容器日志查询',
   RESOURCE_EVENT_SEARCH: '资源事件查询',
   AUDIT_LOG_SEARCH: '审计日志查询',

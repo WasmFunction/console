@@ -17,7 +17,7 @@
  */
 module.exports = {
   // Banner
-  PROJECT_DESC: '项目用于对资源进行分组管理和控制不同用户的资源管理权限。',
+  PROJECT_DESC: 'DevContainer项目允许你在项目内创建和删除云主机,提供ssh和网页方式登录云主机。',
   SYSTEM_PROJECTS: '系统项目',
   USER_PROJECTS: '用户项目',
   // List
@@ -26,8 +26,8 @@ module.exports = {
   ACTIVE: '活跃',
   // List > Assign Workspace
   PROJECT_ADMINISTRATOR: '项目管理员',
-  PROJECT_ADMINISTRATOR_DESC: '选择企业空间中的用户作为项目管理员。',
-  PROJECT_ASSIGN_DESC: '项目被分配到企业空间后不允许变更项目所属的企业空间。',
+  PROJECT_ADMINISTRATOR_DESC: '选择工作空间中的用户作为项目管理员。',
+  PROJECT_ASSIGN_DESC: '项目被分配到工作空间后不允许变更项目所属的工作空间。',
   // List > Create
   CREATE_PROJECT_DESC: '创建项目以对资源进行分组并控制不同用户的权限。',
   PROJECT_NAME_DESC: '名称只能包含小写字母、数字和连字符（-），必须以小写字母开头并以小写字母或数字结尾，最长 63 个字符。',

@@ -142,7 +142,7 @@ export default {
               data = newObject[kind]
             }
           }
-
+          
           store.create(data, { cluster, namespace }).then(async () => {
             const { isScheduleDeployment } = store
             if (isScheduleDeployment && renderScheduleTab) {

@@ -79,7 +79,7 @@ module.exports = {
   RUNNING_PODS: '运行中的容器组数量',
   ROUTE: '应用路由',
   // Resource Usage > Projects
-  PROJECT_PL: '项目',
+  PROJECT_PL: 'DevContainer项目',
   PROJECT_COUNT: '项目数量',
   // Usage Ranking
   USAGE_RANKING: '用量排行',
