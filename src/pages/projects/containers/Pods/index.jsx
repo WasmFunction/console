@@ -132,19 +132,19 @@ export default class Pods extends React.Component {
         isHideable: true,
         width: '18%',
         render: this.renderNode,
-      },*/
+      }, */
       {
         title: t('IMAGE'),
         dataIndex: 'podImage',
         isHideable: true,
         width: '20%',
       },
-      /*{
+      /* {
         title: t('POD_IP_ADDRESS'),
         dataIndex: 'podIp',
         isHideable: true,
         width: '15%',
-      },*/
+      }, */
       // 添加
       // {
       //   title: t('POD_PORT'),
@@ -152,14 +152,14 @@ export default class Pods extends React.Component {
       //   isHideable: true,
       //   width: '15%',
       // },
-     /* 隐藏pods-应用项
+      /* 隐藏pods-应用项
       {
         title: t('APP'),
         dataIndex: 'app',
         isHideable: true,
         search: true,
         width: '15%',
-      },*/
+      }, */
       {
         title: t('UPDATE_TIME_TCAP'),
         dataIndex: 'startTime',

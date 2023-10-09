@@ -176,7 +176,7 @@ export default class CreateModal extends React.Component {
     const { name, width, visible, onCancel, noCodeEdit, ...rest } = this.props
     const { isCodeMode } = this.state
 
-    const value = t(name) === "Deployment" ? "dev-container" : t(name)
+    const value = t(name) === 'Deployment' ? 'dev-container' : t(name)
     const title = this.props.title || t('CREATE_NAME', { name: value })
 
     return (

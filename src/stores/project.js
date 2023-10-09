@@ -22,7 +22,7 @@ import { LIST_DEFAULT_ORDER } from 'utils/constants'
 import { eventBus } from 'utils/EventBus'
 import { eventKeys } from 'utils/events'
 import ObjectMapper from 'utils/object.mapper'
-import { deploymentConfig, serviceConfig} from '../utils/template'
+import { deploymentConfig, serviceConfig } from '../utils/template'
 import { getsshCommand } from '../utils/network'
 import ServiceStore from './service'
 
@@ -90,7 +90,10 @@ export default class ProjectStore extends Base {
   }
 
   getWorkloadRequest = (data, params) => {
-    const workload = `apis/apps/v1/namespaces/${get(data, 'metadata.namespace')}/deployments`
+    const workload = `apis/apps/v1/namespaces/${get(
+      data,
+      'metadata.namespace'
+    )}/deployments`
     return { url: workload, data }
   }
 
@@ -175,36 +178,36 @@ export default class ProjectStore extends Base {
       )
 
       const ret = getsshCommand()
-      
+
       // 创建一个容器
       deploymentConfig.metadata.namespace = data.metadata.name
       deploymentConfig.metadata.annotations = data.metadata.annotations
-      deploymentConfig.spec.template.metadata.annotations = data.metadata.annotations
-      deploymentConfig.spec.template.metadata.annotations['custom.annotation/port'] = ret[0];
+      deploymentConfig.spec.template.metadata.annotations =
+        data.metadata.annotations
+      deploymentConfig.spec.template.metadata.annotations[
+        'custom.annotation/port'
+      ] = ret[0]
 
       const workloadRequest = this.getWorkloadRequest(deploymentConfig, params)
-      console.log(workloadRequest.url, workloadRequest.data)   
-      await this.submitting(request.post(workloadRequest.url, workloadRequest.data))
+      console.log(workloadRequest.url, workloadRequest.data)
+      await this.submitting(
+        request.post(workloadRequest.url, workloadRequest.data)
+      )
 
-      
       serviceConfig.metadata.namespace = data.metadata.name
       serviceConfig.spec.ports[0].nodePort = ret[1]
-      
+
       const serviceRequest = this.getServiceRequest(serviceConfig, params)
-      console.log(serviceRequest.url, serviceRequest.data) 
-      await this.submitting(request.post(serviceRequest.url, serviceRequest.data))
-
-
-
+      console.log(serviceRequest.url, serviceRequest.data)
+      await this.submitting(
+        request.post(serviceRequest.url, serviceRequest.data)
+      )
     } else {
       res = this.submitting(request.post(this.getListUrl(params), data))
     }
     this.afterChange(res, params)
 
     console.log(data)
-
-
-  
 
     return res
   }

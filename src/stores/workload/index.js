@@ -21,14 +21,12 @@ import { action } from 'mobx'
 
 import { withDryRun } from 'utils'
 import { MODULE_KIND_MAP } from 'utils/constants'
-import { deploymentConfig, serviceConfig} from '../../utils/template'
-import { getsshCommand } from '../../utils/network'
-
 import Base from 'stores/base'
+import { deploymentConfig, serviceConfig } from '../../utils/template'
+import { getsshCommand } from '../../utils/network'
 
 import HpaStore from './hpa'
 import ServiceStore from '../service'
-
 
 export default class WorkloadStore extends Base {
   constructor(module) {
@@ -42,30 +40,33 @@ export default class WorkloadStore extends Base {
     const requests = []
 
     if (has(data, 'metadata')) {
-      let deployment = this.getWorkloadRequest(data, params)
-      
+      const deployment = this.getWorkloadRequest(data, params)
+
       // 此处修改部分
       const ret = getsshCommand()
-      deployment.data.spec.template.metadata.annotations['custom.annotation/port'] = ret[0];
-      deployment.data.spec.template.spec.containers.forEach((container) => {
-        container.command = [...deploymentConfig.spec.template.spec.containers[0].command]
-      });
+      deployment.data.spec.template.metadata.annotations[
+        'custom.annotation/port'
+      ] = ret[0]
+      deployment.data.spec.template.spec.containers.forEach(container => {
+        container.command = [
+          ...deploymentConfig.spec.template.spec.containers[0].command,
+        ]
+      })
       console.log(deployment.url)
-      console.log(deployment.data) 
+      console.log(deployment.data)
       requests.push(deployment)
 
-      let service = this.getServiceRequest(data, params)
+      const service = this.getServiceRequest(data, params)
       service.data = serviceConfig
-      service.data.metadata.name = 'ssh-service-' + deployment.data.metadata.name 
+      service.data.metadata.name = `ssh-service-${deployment.data.metadata.name}`
       service.data.metadata.namespace = deployment.data.metadata.namespace
       service.data.metadata.annotations = deployment.data.metadata.annotations
       service.data.spec.selector.app = deployment.data.metadata.name
       service.data.spec.ports[0].nodePort = ret[1]
-      
+
       console.log(service.url)
       console.log(service.data)
-      requests.push(service);
-
+      requests.push(service)
     } else {
       const kind = MODULE_KIND_MAP[this.module]
 

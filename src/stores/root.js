@@ -85,11 +85,6 @@ export default class RootStore {
     return request.post('login', params)
   }
 
-  loginIdentityProviders(params) {
-    const url = `/oauth/login/${params.title}`
-    return request.post(url, { ...params })
-  }
-
   @action
   async logout() {
     const res = await request.post('logout')

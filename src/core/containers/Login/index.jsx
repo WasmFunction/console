@@ -60,8 +60,6 @@ export default class Login extends Component {
     formData: {},
     isSubmmiting: false,
     errorCount: 0,
-    showKS: true,
-    currentServer: {},
   }
 
   handleOAuthLogin = server => e => {
@@ -71,101 +69,54 @@ export default class Login extends Component {
       endSessionURL: server.endSessionURL,
     }
     cookie('oAuthLoginInfo', JSON.stringify(info))
-    if (server.type === 'LDAPIdentityProvider') {
-      this.setState({
-        showKS: false,
-        currentServer: server,
-      })
-    } else {
-      window.location.href = e.currentTarget.dataset.url
-    }
+    window.location.href = e.currentTarget.dataset.url
   }
 
   handleSubmit = data => {
     const { username, password, ...rest } = data
-    const { showKS, currentServer } = this.state
     this.setState({ isSubmmiting: true })
 
     cookie('oAuthLoginInfo', '')
 
     const encryptKey = get(globals, 'config.encryptKey', 'kubesphere')
 
-    if (!showKS) {
-      this.props.rootStore
-        .loginIdentityProviders({
-          username,
-          password,
-          title: currentServer.title,
-        })
-        .then(resp => {
-          this.setState({ isSubmmiting: false })
-          if (resp.status !== 200) {
-            this.setState({
-              errorMessage: resp.message,
-              errorCount: resp.errorCount,
-            })
-          }
-        })
-    } else {
-      this.props.rootStore
-        .login({
-          username,
-          encrypt: encrypt(encryptKey, password),
-          ...rest,
-        })
-        .then(resp => {
-          this.setState({ isSubmmiting: false })
-          if (resp.status !== 200) {
-            this.setState({
-              errorMessage: resp.message,
-              errorCount: resp.errorCount,
-            })
-          }
-        })
-    }
-  }
-
-  handleBack = () => {
-    this.setState({
-      showKS: true,
-      currentServer: {},
-      errorMessage: '',
-      errorCount: 0,
-    })
+    this.props.rootStore
+      .login({
+        username,
+        encrypt: encrypt(encryptKey, password),
+        ...rest,
+      })
+      .then(resp => {
+        this.setState({ isSubmmiting: false })
+        if (resp.status !== 200) {
+          this.setState({
+            errorMessage: resp.message,
+            errorCount: resp.errorCount,
+          })
+        }
+      })
   }
 
   render() {
-    const {
-      formData,
-      isSubmmiting,
-      errorMessage,
-      showKS,
-      currentServer,
-    } = this.state
-
+    const { formData, isSubmmiting, errorMessage } = this.state
     return (
-      <div className={styles.loginContainer}>
+      <div>
         <a href="/" className={styles.logo}>
           <img src="/assets/logo.svg" alt="" />
         </a>
         <div className={styles.login}>
-          <div className={styles.header}>
-            {showKS
-              ? t('WELCOME')
-              : t('TITLE_USERNAME', { title: currentServer.title })}
-          </div>
+          <div className={styles.header}>{t('WELCOME')}</div>
           <div className={styles.divider}></div>
-          {showKS &&
-            get(globals, 'oauthServers', []).map(server => (
-              <div
-                key={server.url}
-                className={styles.oauth}
-                data-url={server.url}
-                onClick={this.handleOAuthLogin(server)}
-              >
-                <span>{t('LOG_IN_WITH_TITLE', { title: server.title })}</span>
-              </div>
-            ))}
+          {get(globals, 'oauthServers', []).map(server => (
+            <div
+              key={server.url}
+              className={styles.oauth}
+              data-url={server.url}
+              onClick={this.handleOAuthLogin(server)}
+            >
+              <span>{t('LOG_IN_WITH_TITLE', { title: server.title })}</span>
+            </div>
+          ))}
           {errorMessage && (
             <Alert
               className="margin-t12 margin-b12"
@@ -175,11 +126,7 @@ export default class Login extends Component {
           )}
           <Form data={formData} onSubmit={this.handleSubmit}>
             <Form.Item
-              label={
-                showKS
-                  ? t('USERNAME_OR_EMAIL')
-                  : t('TITLE_USERNAME', { title: currentServer.title })
-              }
+              label={t('USERNAME_OR_EMAIL')}
               rules={[
                 {
                   required: true,
@@ -193,21 +140,12 @@ export default class Login extends Component {
               label={t('PASSWORD')}
               rules={[{ required: true, message: t('PASSWORD_EMPTY_DESC') }]}
             >
-              <InputPassword
-                name="password"
-                placeholder=" "
-                autoComplete="new-password"
-              />
+              <InputPassword name="password" placeholder=" " />
             </Form.Item>
             <div className={styles.footer}>
               <Button type="control" htmlType="submit" loading={isSubmmiting}>
                 {t('LOG_IN')}
               </Button>
-              {!showKS && (
-                <p className={styles.back} onClick={this.handleBack}>
-                  {t('BACK')}
-                </p>
-              )}
             </div>
           </Form>
         </div>
